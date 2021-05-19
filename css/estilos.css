@@ -1,0 +1,184 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+
+	font-family: 'Roboto Condensed',Sans-serif;
+	background: #000 url('../img/f1.jpg');
+	background-size: cover;/*Ajusta ancho y alto*/
+	background-attachment: fixed;/*El fondo no tiene scroll*/
+}
+.contenedor{
+	margin: auto;/*toma tamaño de pantalla y pone en medio los elemnetos*/
+	width: 90%;
+	max-width: 1000px;
+
+	/*contenedor flexible*/
+	display: flex;
+	flex-direction: row;/*alinea en fila*/
+	flex-wrap: wrap;/*respetara tamaños del elemento y si sobre pasa el tamaño baja al otro renglon*/  
+}
+header{
+	width: 100%;
+	color: #000;
+	padding: 50px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+header nav a{
+	color: #000;
+	text-decoration: none;
+	margin-right: 40px;
+	font-size: 18px;
+
+	
+}
+header nav a:hover{
+	text-decoration: underline;
+}
+/*ESTILOS MAIN -- marco blanco primera imagen*/
+main{
+	background: #fff;
+	width: 70%;
+	padding: 20px;
+}
+main section .banner{
+	margin-bottom: 20px;
+}
+main section .banner img{
+	width: 100%;
+	vertical-align: top;/*Alinea la imagen*/
+}
+main section h2 {
+	margin-bottom:20px;/*separa*/
+	font-weight: normal;
+	font-size: 32px; 
+}
+main section p{
+	margin-bottom: 20px;
+	font-size: 18px;
+	line-height: 30px;
+}
+/*ESTILOS ASIDE*/
+aside{
+	width: 30%;
+	background: #424242;
+
+	/*lo declaras flexible*/
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	justify-content: space-between;
+
+
+}
+/*estilo exterior paquete*/
+aside .paquete{
+	text-align: center;
+	padding: 50px 0;
+	background: #4264a2;
+	
+
+}
+/*estilo interior paquete*/
+aside .paquete h1{
+font-size: 30px;
+color: #fff;
+margin-bottom: 10px;
+}
+
+/*estilo contenido paquete*/
+aside .paquete li{
+	font-size: 15px;
+	color: #fff;
+	list-style: none;/*quita puntos de la lista*/
+}
+/*ESTILOS FOOTER*/
+footer {
+	margin: 20 0;
+	background: rgba(255,255,255,0.4);/*combina rojo verde y azul, A es de transparencia*/
+	width: 100%;
+	padding: 20px;
+	color: #fff;
+
+	/*vuelves flexible el elemeto "SIEMPRE DEBE SER EL PADRE ELEMENTO PRINCIPAL" */
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+}
+footer .redes a{
+	color: #fff;
+	text-decoration: none;
+	margin-left: 20px;
+}
+footer .redes a:hover{
+	text-decoration: underline;/*aprecias subrayado cuando pasas el mouse*/
+}
+
+/*MEDIA PARA MOVILES*/
+/*hasta que la pantalla mida menos de los 800 */
+@media screen and (max-width: 800px)
+{
+
+	main
+	{
+		width: 100%;/*aumentas ancho de pantalla y en automatico bajas la clase paquete en columnas*/
+		
+	}
+	aside
+	{
+		width: 100%;
+		flex-direction: row;/*alineas en filas */
+		justify-content: space-evenly;
+	}
+	aside .paquete
+	{
+		margin: 10px;
+		padding: 50px 10px;
+	}
+	
+}
+
+/*cuando la pantalla mida menos de 600 o como max de 600*/
+@media screen and (max-width: 600px){
+	
+	header
+	{
+		flex-direction: column;/*bajas el menu el logo se queda arriba*/
+		padding: 20px 0;
+	}
+	header nav
+	{
+		width: 100%;
+		background: rgba(255,255,255,0.7);
+		padding: 20px;
+		display: flex;/*haces flexible*/
+		flex-direction: row;/*lo pones el fila*/
+		justify-content: space-evenly;/*deja todo con el mismo marjen */
+
+	}
+	header .logo{
+		margin-bottom: 20px;
+	}
+	footer{
+		flex-direction: column-reverse;/*para bajar elementos y pone al reves primero redes y despues autor*/
+		align-items: center;
+
+	}
+	footer .redes{
+		margin-bottom: 20px;
+	}
+}
+
+/*PARA PANTALLAS MENORES DE 400px */
+@media screen and (max-width: 400px){
+	aside .paquete{
+width: 100%;
+	}
+}
